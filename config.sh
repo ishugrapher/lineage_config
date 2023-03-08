@@ -7,7 +7,7 @@ git clone https://github.com/realme-mt6893-dev/android_device_realme_RMX3031 -b 
 git clone https://github.com/realme-mt6893-dev/android_kernel_realme_mt6893 -b thirteen kernel/realme/mt6893
 git clone https://github.com/realme-mt6893-dev/proprietary_vendor_realme_RMX3031 -b thirteen vendor/realme/RMX3031
 git clone https://github.com/ManshuTyagi/vendor_realme_RMX3031-firmware vendor/realme/RMX3031-firmware 
-git clonehttps://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b thirteen device/mediatek/sepolicy_vndr
+git clone https://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b thirteen device/mediatek/sepolicy_vndr
 cd device/realme/RMX3031
 mv aosp_RMX2020.mk lineage_RMX3031.mk
 sed -i "s/aosp/lineage/" AndroidProducts.mk

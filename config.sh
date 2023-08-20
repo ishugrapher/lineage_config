@@ -2,7 +2,7 @@ mkdir riceOSS
 cd riceOSS
 git config --global user.email "shwetankrai12@gmail.com" && git config --global user.name "Shwetank Rai"
 repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
-repo sync -c --no-clone-bundle --force-remove-dirty --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --force-remove-dirty --optimized-fetch --prune --force-sync -j$(nproc --all)
 git clone https://github.com/ishugrapher/android_device_realme_RMX3031 -b thirteen device/realme/RMX3031
 git clone https://github.com/realme-mt6893-dev/android_kernel_realme_mt6893 -b thirteen kernel/realme/mt6893
 git clone https://github.com/realme-mt6893-dev/proprietary_vendor_realme_RMX3031 -b thirteen vendor/realme/RMX3031
@@ -12,6 +12,10 @@ cd device/realme/RMX3031
 mv aosp_RMX3031.mk lineage_RMX3031.mk
 sed -i "s/aosp/lineage/" AndroidProducts.mk
 sed -i "s/aosp/lineage/" lineage_RMX3031.mk
-
+cd ..
+cd ..
+cd ..
+. build/evnsetup.sh
+brunch lineage_RMX3031-userdebug
 
 
